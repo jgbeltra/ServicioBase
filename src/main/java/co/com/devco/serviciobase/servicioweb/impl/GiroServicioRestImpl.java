@@ -30,6 +30,7 @@ public class GiroServicioRestImpl implements GiroServicioRest {
 
         System.out.print("Esto representa un primer cambio");
 
+
         if (transaccion != null) {
             TransaccionRecurso transaccionRecurso = convertirARecurso.apply(transaccion);
             return Response.status(CREATED).entity(transaccionRecurso).build();
