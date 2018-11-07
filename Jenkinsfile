@@ -1,9 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                sh 'mvn --version'
+                sh './gradlew -version'
+                sh './gradlew build -x test'
+            }
+        }
+        stage('UnitTests') {
+            steps {
+                sh './gradlew test'
+                junit 'build/test-results/test/*.xml'
             }
         }
     }
