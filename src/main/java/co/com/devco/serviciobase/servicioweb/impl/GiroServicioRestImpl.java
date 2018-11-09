@@ -28,6 +28,9 @@ public class GiroServicioRestImpl implements GiroServicioRest {
 
         Transaccion transaccion = giroServicio.consultarGiro(idTransaccion, fechaInicio, fechaFin);
 
+        System.out.print("Esto representa un primer cambio");
+
+
         if (transaccion != null) {
             TransaccionRecurso transaccionRecurso = convertirARecurso.apply(transaccion);
             return Response.status(CREATED).entity(transaccionRecurso).build();
