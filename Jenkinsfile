@@ -15,5 +15,8 @@ pipeline {
                 junit 'build/test-results/test/*.xml'
             }
         }
+        stage('Deploy'){
+            sh './gradlew bootRun'
+        }
     }
 }
