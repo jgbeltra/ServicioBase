@@ -6,6 +6,7 @@ pipeline {
             steps {
                 checkout scm
                 sh './gradlew -version'
+                sh './gradlew clean'
                 sh './gradlew build -x test'
             }
         }
