@@ -27,6 +27,7 @@ public class GiroServicioRestImpl implements GiroServicioRest {
     public Response consultarGiro(String idTransaccion, String fechaInicio, String fechaFin) throws Exception {
 
         Transaccion transaccion = giroServicio.consultarGiro(idTransaccion, fechaInicio, fechaFin);
+        
 
         if (transaccion != null) {
             TransaccionRecurso transaccionRecurso = convertirARecurso.apply(transaccion);
