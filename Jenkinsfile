@@ -37,7 +37,7 @@ pipeline {
         	        def server = Artifactory.server 'JennifersArtifactory'
         	        def uploadSpec = """{
         	        "files": [{
-        	             "pattern": "build/libs/${pipelineParams.jarName}.jar",
+        	             "pattern": "build/libs/*.jar",
         	             "target": "servicio-base/beta/"
         	              }]
         	              }"""
