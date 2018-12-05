@@ -24,10 +24,27 @@ pipeline {
                       reportFiles: 'index.html',
                       reportName: "Unit Tests Report"
                     ])
-                    checkpoint "Build Done"
                     stash includes: "build/libs/*.jar", name: 'artifact'
 
             }
         }
+
+        stage('ArtifactoryPublish') {
+        	steps {
+        		sh "pwd"
+        		unstash 'artifact'
+        	    script {
+        	        def server = Artifactory.server 'JennifersArtifactory'
+        	        def uploadSpec = """{
+        	        "files": [{
+        	             "pattern": "build/libs/${pipelineParams.jarName}.jar",
+        	             "target": "servicio-base/beta/"
+        	              }]
+        	              }"""
+        	         server.upload(uploadSpec)
+        	       }
+        	 }
+        }
+
     }
 }
