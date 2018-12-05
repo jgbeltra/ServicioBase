@@ -8,9 +8,9 @@ pipeline {
                 sh './gradlew -version'
                 sh './gradlew clean'
                 sh './gradlew build -x test'
-                archive (includes: 'build/libs/*.jar')
             }
         }
+
         stage('UnitTests') {
             steps {
                 sh './gradlew test'
@@ -24,6 +24,8 @@ pipeline {
                       reportFiles: 'index.html',
                       reportName: "Unit Tests Report"
                     ])
+                    checkpoint "Build Done"
+                    stash includes: "build/libs/*.jar", name: 'artifact'
 
             }
         }
