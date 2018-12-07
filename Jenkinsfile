@@ -46,5 +46,21 @@ pipeline {
         	 }
         }
 
+
+          stage('ArtifactoryDownload') {
+                	steps {
+                	    script {
+                	        def server = Artifactory.server 'JennifersArtifactory'
+                	        def downloadSpec = """{
+                	        "files": [{
+                	             "pattern": "servicio-base/beta/*.jar",
+                	             "target": "artifac/"
+                	              }]
+                	              }"""
+                	         server.download(downloadSpec)
+                	       }
+                	 }
+                }
+
     }
 }
