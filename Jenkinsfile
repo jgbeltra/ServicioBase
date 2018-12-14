@@ -65,7 +65,7 @@ stages {
     stage('BDScriptsExecution') {
         steps {
             script {
-                bdExecute('/Users/jenniferperezbedoya/Documents/devco/clientes/sura-am/jenkins/BD/Scripts/prueba4.sql')
+                execute "cat /Users/jenniferperezbedoya/Documents/devco/clientes/sura-am/jenkins/BD/Scripts/prueba4.sql | sqlcmd -s localhost -u sa -p Admin2018 -o 1433"
             }
         }
     }
