@@ -1,4 +1,4 @@
-@Library('devops-shared-functions') _
+@Library("devops-shared-functions") _
 
 pipeline {
     agent any
@@ -65,7 +65,7 @@ stages {
     stage('BDScriptsExecution') {
         steps {
             script {
-                bd.execute('/Users/jenniferperezbedoya/Documents/devco/clientes/sura-am/jenkins/BD/Scripts/prueba4.sql')
+                bdExecute('/Users/jenniferperezbedoya/Documents/devco/clientes/sura-am/jenkins/BD/Scripts/prueba4.sql')
             }
         }
     }
