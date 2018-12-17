@@ -64,6 +64,7 @@ stages {
 
     stage('BDScriptsExecution') {
         steps {
+        sh "ls"
             script {
                 bdExecute "bd/"
             }
