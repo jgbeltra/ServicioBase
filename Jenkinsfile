@@ -65,7 +65,7 @@ stages {
     stage('BDScriptsExecution') {
         steps {
         sh "ls"
-        stash includes: "bd/scripts/*", name: 'bd'
+        stash includes: "bd/scripts/*.sql", name: 'bd'
             script {
                 bdExecute "bd/scripts"
             }
