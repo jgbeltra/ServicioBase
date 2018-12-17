@@ -66,7 +66,7 @@ stages {
         steps {
         sh "ls"
             script {
-                bdExecute "bd"
+                bdExecute "./bd"
             }
         }
     }
