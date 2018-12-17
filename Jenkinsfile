@@ -65,7 +65,7 @@ stages {
     stage('BDScriptsExecution') {
         steps {
             script {
-                bdExecute "/Users/jenniferperezbedoya/Documents/proyectos/ICProjects/jenkins/ServicioBase/bd"
+                bdExecute "/bd"
             }
         }
     }
