@@ -67,7 +67,7 @@ stages {
         sh "ls"
         stash includes: "bd/scripts/*.sql", name: 'bd'
             script {
-                bdExecute "bd/scripts"
+                bdExecute "bd/scripts/"
             }
         }
     }
