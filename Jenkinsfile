@@ -64,8 +64,6 @@ stages {
 
     stage('BDScriptsExecution') {
         steps {
-        sh "ls"
-        sh "pwd"
             script {
                 bdExecute("/bd/scripts", "/bd/config.json")
             }
