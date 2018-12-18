@@ -67,7 +67,7 @@ stages {
         sh "ls"
         sh "pwd"
             script {
-                bdExecute("/bd/scripts", "/bd/config.json")
+                bdExecute("/bd/scripts", "/bd/config.jso")
             }
         }
     }
