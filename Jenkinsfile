@@ -15,7 +15,7 @@ pipeline{
       steps{
         sh "ls"
 	 script{
-          bdExecute "D:/Jenkins/bd/scripts"
+          bdExecute "/bd/scripts"
         }
       }
     }
