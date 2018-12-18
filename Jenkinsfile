@@ -13,15 +13,13 @@ stages {
         }
     }
 
-   stage('BDScriptsExecution') {
-        steps {
-        sh "ls"
-            script {
-                bdExecute "/Users/jenniferperezbedoya/Documents/proyectos/ICProjects/jenkins/ServicioBase/bd/scripts"
-            }
-        }
-    }
-
+   stage('BDScriptsExecution'){
+	  steps{
+		sh"ls"sh"pwd"script{
+		  bdExecute"/bd/scripts"
+		}
+	  }
+	}
+    
    }
-
 }
