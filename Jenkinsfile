@@ -1,25 +1,19 @@
-@Library("devops-shared-functions") _
+@Library("devops-shared-functions")_
 
-pipeline {
-    agent any
-
-stages {
-    stage('Build') {
-        steps {
-            checkout scm
-            sh './gradlew -version'
-            sh './gradlew clean'
-            sh './gradlew build -x test'
-        }
+pipeline{
+  agent any
+  stages{
+    stage('Build'){
+      steps{
+        checkoutscmsh'./gradlew -version'sh'./gradlew clean'sh'./gradlew build -x test'
+      }
     }
-
-   stage('BDScriptsExecution'){
-	  steps{
-		sh"ls"sh"pwd"script{
-		  bdExecute"/bd/scripts"
-		}
-	  }
-	}
-    
-   }
+	stage('BDScriptsExecution'){
+      steps{
+        sh"ls"script{
+          bdExecute "/bd/scripts"
+        }
+      }
+    }
+  }
 }
