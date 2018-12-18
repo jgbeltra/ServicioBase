@@ -16,7 +16,7 @@ stages {
     stage('BDScriptsExecution') {
         steps {
             script {
-                bdExecute("\\bd\\scripts", "\\bd\\config.json")
+                bdExecute("/bd/scripts", "/bd/config.json")
             }
         }
      }
