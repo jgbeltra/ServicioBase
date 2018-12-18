@@ -1,4 +1,4 @@
-@Library("devops-shared-functions") _
+@Library("devops-shared-functions")
 import com.pe.suraam.functions.BDConfigReader
 
 pipeline {
