@@ -1,4 +1,5 @@
 @Library("devops-shared-functions") _
+import com.pe.suraam.functions.BDConfigReader
 
 pipeline {
     agent any
