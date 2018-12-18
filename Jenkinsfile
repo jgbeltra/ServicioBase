@@ -66,7 +66,7 @@ stages {
         steps {
         sh "ls"
             script {
-                bdExecute "/bd/scripts"
+                bdExecute "/Users/jenniferperezbedoya/Documents/proyectos/ICProjects/jenkins/ServicioBase/bd/scripts"
             }
         }
     }
